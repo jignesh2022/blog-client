@@ -1,0 +1,25 @@
+<div class="row justify-content-md-center">
+    <div class="col-md-4">        
+        <h3>Login</h3>
+        <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+        <input type="text" name="email" id="email" #emailRef
+        formControlName="email" placeholder="email" autofocus class="form-control">
+        <div *ngIf="!getControl.email.valid && (getControl.email.dirty || getControl.email.touched)" class="text-danger">
+          <div *ngIf="getControl.email.errors.required">email is required.</div>          
+        </div>
+        <br>
+        <input type="password" name="password" id="password"  
+            formControlName="password" placeholder="password" class="form-control">
+        <div *ngIf="getControl.password.touched && getControl.password.invalid" class="text-danger">
+          <div *ngIf="getControl.password.errors.required">password is required.</div>          
+        </div>
+        <div class="text-danger" *ngIf="showAlert">
+            <br> {{alertMessage}}
+        </div>
+        <br>
+        <button class="btn btn-primary btn-sm" type="submit" [disabled]="!loginForm.valid">Login</button>        
+        &nbsp;&nbsp;
+        <a class="btn btn-primary btn-sm" routerLink="/register">Register</a>
+      </form>
+    </div>
+</div>

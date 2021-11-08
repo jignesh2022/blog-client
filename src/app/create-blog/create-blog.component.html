@@ -1,0 +1,26 @@
+<h2>Create New Blog</h2>
+<form [formGroup]="blogForm"  (ngSubmit)="onSubmit()">
+    <label for="title">Title(max. 300 chars.)</label>
+    <input name="title" formControlName="title" type="text" class="form-control">
+    <div *ngIf="!getControl.title.valid && (getControl.title.dirty || getControl.title.touched)" class="text-danger">
+        <div *ngIf="getControl.title.errors.required">title is required.</div>          
+    </div>
+    <br>
+    <label for="summary">Summary(max. 200 chars.)</label>
+    <input type="text" formControlName="summary" name="summary" class="form-control">
+    <div *ngIf="!getControl.summary.valid && (getControl.summary.dirty || getControl.summary.touched)" class="text-danger">
+        <div *ngIf="getControl.summary.errors.required">summary is required.</div>          
+    </div>
+    <br>
+    <label for="body">Body</label>
+    <angular-editor [placeholder]="'Enter text here...'" [config]="editorConfig"
+    formControlName="body" name="editor"></angular-editor>
+    <div *ngIf="!getControl.body.valid && (getControl.body.dirty || getControl.body.touched)" class="text-danger">
+        <div *ngIf="getControl.body.errors.required">Body is required.</div>          
+    </div>
+    
+    <br> 
+
+    <button type="submit" class="btn btn-sm btn-primary" [disabled]="!blogForm.valid">Submit</button>
+</form>
+

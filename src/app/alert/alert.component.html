@@ -1,0 +1,20 @@
+<div *ngIf="msgType == 'ERROR'">
+    <div class="alert alert-danger">
+        {{msg}}
+    </div>
+</div>
+<div *ngIf="msgType == 'INFO'"> 
+    <div class="alert alert-info">
+        {{msg}}
+    </div>
+</div>
+<div *ngIf="msgType == 'WARNING'">
+    <div class="alert alert-warning">
+        {{msg}}
+    </div>
+</div>
+<div *ngIf="msgType == 'SUCCESS'">
+    <div class="alert alert-success">
+        {{msg}}
+    </div>
+</div>

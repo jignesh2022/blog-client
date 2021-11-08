@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+#footer{
+    color:#FFFFFF;
+    background-color:#555b6e;    
+    position: fixed;
+    bottom: 0; 
+    width:100%;
+    display:block;
+}
+.title{
+    color:#6a0096;
+}
+a:hover{
+    text-decoration:underline;;
+}
+
+.mainTitle{
+    color: #009688;
+}
+
+.termeric{
+    color:#ffc107;
+}
+
+.doNotHighlightOnFocus:focus
+{
+    outline:none;
+}
